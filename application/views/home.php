@@ -276,26 +276,26 @@ $this->load->view('_partials/navbar');
           <div class="garis3"></div>
           <h3 style="font-size: 50px;color:white;text-align: left;font-weight: bold;position: relative; ">DATA STATISTIK</h3>
         </header>
-
+        <?php foreach ($stats as $stat): ?>
         <div class="row counters">
-
+        	
           <div class="col-lg-4 col-6 text-center">
-            <span data-toggle="counter-up">274</span>
+            <span data-toggle="counter-up"><?php echo $stat->member ?></span>
             <p>Anggota</p>
           </div>
 
           <div class="col-lg-4 col-6 text-center">
-            <span data-toggle="counter-up">421</span>
+            <span data-toggle="counter-up"><?php echo $stat->visitor ?></span>
             <p>Pengunjung</p>
           </div>
 
           <div class="col-lg-4 col-6 text-center">
-            <span data-toggle="counter-up">1.364</span>
+            <span data-toggle="counter-up"><?php echo $stat->collection ?></span>
             <p>Buku</p>
           </div>
-
+          
         </div>
-
+        <?php endforeach; ?>
       </div>
     </section>
 
@@ -443,84 +443,35 @@ $this->load->view('_partials/navbar');
           <h3 style=""> EVENT TERBARU </h3>
         </header>
 
+        <?php foreach ($event as $events): ?>
       
          <article class="post">
           <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-3 event-date" style="border-right:1px solid #E6E6E6; text-align: center;">
               <span style="display: block;width: 100%;line-height: 1;font-size: 100px;color: #a6a6a6;font-family:Circular Std;">
-                18
+                <?php echo $events->tanggal ?>
               </span>
-               <strong >Sep,2019</strong>
+               <strong ><?php echo $events->blnthn ?></strong>
             </div>
             <div class="col-md-9 col-sm-9 col-xs-9 post-content">
               <div class="post-title">
                 <h3>
-                  <a href="#">
-                   Workshop e-Content dan Reference Management Tool
+                  <a href="<?php echo base_url($events->permalink) ?>">
+                   <?php echo $events->title ?>
                   </a>
                 </h3>
                 <br>
               </div>
               <div class="entry-content">
                 <p>
-                  "     SMKN 1 TEMPEL mengadakan Workshop e-Content dan Reference Management    "
+                  <?php echo $events->content ?>
                 </p>
               </div>
             </div>
           </div>
-           
-         </article>
-         <article class="post">
-          <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-3 event-date" style="border-right:1px solid #E6E6E6; text-align: center;">
-              <span style="display: block;width: 100%;line-height: 1;font-size: 100px;color: #a6a6a6;font-family:Circular Std;">
-                14
-              </span>
-               <strong >Sep,2019</strong>
-            </div>
-            <div class="col-md-9 col-sm-9 col-xs-9 post-content">
-              <div class="post-title">
-                <h3>
-                  <a href="#">
-                    Talkshow Memulai Bisnis dari Mahasiswa
-                  </a>
-                </h3>
-    			<br>
-              </div>
-              <div class="entry-content">
-                <p>
-                  "     SMKN 1 TEMPEL berhasil membawa pulang piala penghargaan sebagai perpustakaan terlengkap sekabupaten"
-                </p>
-              </div>
-            </div>
-          </div>
-           
-         </article>
-         <article class="post">
-          <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-3 event-date" style="border-right:1px solid #E6E6E6; text-align: center;">
-              <span style="display: block;width: 100%;line-height: 1;font-size: 100px;color: #a6a6a6;font-family:Circular Std;">
-                10
-              </span>
-               <strong >Sep,2019</strong>
-            </div>
-            <div class="col-md-9 col-sm-9 col-xs-9 post-content">
-              <div class="post-title">
-                <h3>
-                  <a href="#">
-                    Tata Kelola Keuangan
-                  </a>
-                </h3>
-                <br>
-              </div>
-              <div class="entry-content">
-                <p>
-                  "     SMKN 1 TEMPEL berhasil membawa pulang piala penghargaan sebagai perpustakaan terlengkap sekabupaten"
-                </p>
-              </div>
-            </div>
-          </div>   
-         </article>
+        </article>
+        <?php endforeach; ?>
+       
          <a href="" class="makeap_but" style="float: right;">Event Lainnya</a>
       </div>
     </section><!-- #berita -->
@@ -542,84 +493,21 @@ $this->load->view('_partials/navbar');
         </div>
     
       <div class="row galeri-container">
-
+      	<?php foreach ($gallery as $galeri) : ?>
           <div class="col-lg-4 col-md-6 galeri-item filter-web" data-wow-delay="0.1s">
             <div class="galeri-wrap">
-              <img src="<?php echo base_url('assets/') ?>img/galeri/DSCF8761.jpg" class="img-fluid" alt="">
+              <img src="<?php echo base_url('files/'.$galeri->file_name) ?>" class="img-fluid" alt="">
               <div class="galeri-info">
-                <h4><a href="#">Rak Buku</a></h4>
-                <p>Perpustakaan</p>
+                <h4><a href="#"><?php echo $galeri->title ?></a></h4>
+                <p><?php echo $galeri->name ?></p>
                 <div>
-                  <a href="<?php echo base_url('assets/') ?>img/galeri/DSCF8761.jpg" class="link-preview" data-lightbox="galeri" data-title="Perpustakaan" title="Preview"><i class="ion ion-eye"></i></a>
+                  <a href="<?php echo base_url('files/'.$galeri->file_name) ?>" class="link-preview" data-lightbox="galeri" data-title="Perpustakaan" title="Preview"><i class="ion ion-eye"></i></a>
                 </div>
               </div>
             </div>
           </div> 
-
-          <div class="col-lg-4 col-md-6 galeri-item filter-web" data-wow-delay="0.1s">
-            <div class="galeri-wrap">
-              <img src="<?php echo base_url('assets/') ?>img/galeri/timthumb.php.jpeg" class="img-fluid" alt="">
-              <div class="galeri-info">
-                <h4><a href="#">Rapat Pengurus Perpus</a></h4>
-                <p>Perpustakaan</p>
-                <div>
-                  <a href="<?php echo base_url('assets/') ?>img/galeri/timthumb.php.jpeg" class="link-preview" data-lightbox="galeri" data-title="Acara" title="Preview"><i class="ion ion-eye"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> 
-
-          <div class="col-lg-4 col-md-6 galeri-item filter-web" data-wow-delay="0.1s">
-            <div class="galeri-wrap">
-              <img src="<?php echo base_url('assets/') ?>img/galeri/gb40.jpg" class="img-fluid" alt="">
-              <div class="galeri-info">
-                <h4><a href="#">Area Membaca</a></h4>
-                <p>Perpustakaan</p>
-                <div>
-                  <a href="<?php echo base_url('assets/') ?>img/galeri/gb40.jpg" class="link-preview" data-lightbox="galeri" data-title="Acara" title="Preview"><i class="ion ion-eye"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> 
-
-          <div class="col-lg-4 col-md-6 galeri-item filter-web" data-wow-delay="0.1s">
-            <div class="galeri-wrap">
-              <img src="<?php echo base_url('assets/') ?>img/galeri/2-Perpustakaan-sekolah.jpg" class="img-fluid" alt="">
-              <div class="galeri-info">
-                <h4><a href="#">Area Membaca</a></h4>
-                <p>Perpustakaan</p>
-                <div>
-                  <a href="<?php echo base_url('assets/') ?>img/galeri/2-Perpustakaan-sekolah.jpg" class="link-preview" data-lightbox="galeri" data-title="Acara" title="Preview"><i class="ion ion-eye"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> 
-
-          <div class="col-lg-4 col-md-6 galeri-item filter-web" data-wow-delay="0.1s">
-            <div class="galeri-wrap">
-              <img src="<?php echo base_url('assets/') ?>img/galeri/63734_perpustakaan-sekolah.jpg" class="img-fluid" alt="">
-              <div class="galeri-info">
-                <h4><a href="#">Area Membaca</a></h4>
-                <p>Perpustakaan</p>
-                <div>
-                  <a href="<?php echo base_url('assets/') ?>img/galeri/63734_perpustakaan-sekolah.jpg" class="link-preview" data-lightbox="galeri" data-title="Acara" title="Preview"><i class="ion ion-eye"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> 
-
-          <div class="col-lg-4 col-md-6 galeri-item filter-web" data-wow-delay="0.1s">
-            <div class="galeri-wrap">
-              <img src="<?php echo base_url('assets/') ?>img/galeri/mencari-buku-di-perpustakaan-ilustrasi-_140506143128-975.jpg" class="img-fluid" alt="">
-              <div class="galeri-info">
-                <h4><a href="#">Rak Buku</a></h4>
-                <p>Perpustakaan</p>
-                <div>
-                  <a href="<?php echo base_url('assets/') ?>img/galeri/mencari-buku-di-perpustakaan-ilustrasi-_140506143128-975.jpg" class="link-preview" data-lightbox="galeri" data-title="Acara" title="Preview"><i class="ion ion-eye"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> 
+      <?php endforeach; ?>
+          
            <div class="container">
        <a href="" class="makeap_but" style="float: right; margin-bottom: 20px;">Foto Lainnya</a>
        </div>
@@ -643,52 +531,16 @@ $this->load->view('_partials/navbar');
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="owl-carousel testimonials-carousel wow fadeInUp">
-    
+    		<?php foreach ($testi as $test): ?>
               <div class="testimonial-item">
-                <img src="<?php echo base_url('assets/') ?>img/testimonial-1.jpg" class="testimonial-img" alt="">
-                <h3>Saul Goodman</h3>
-                <h4>Ceo &amp; Founder</h4>
+                <img src="<?php echo base_url('files/'.$test->file_name) ?>" class="testimonial-img" alt="">
+                <h3><?php echo $test->name ?></h3>
+                <h4><?php echo $test->job ?></h4>
                 <p>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  <?php echo $test->content ?>
                 </p>
               </div>
-    
-              <div class="testimonial-item">
-                <img src="<?php echo base_url('assets/') ?>img/testimonial-2.jpg" class="testimonial-img" alt="">
-                <h3>Sara Wilsson</h3>
-                <h4>Designer</h4>
-                <p>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                </p>
-              </div>
-    
-              <div class="testimonial-item">
-                <img src="<?php echo base_url('assets/') ?>img/testimonial-3.jpg" class="testimonial-img" alt="">
-                <h3>Jena Karlis</h3>
-                <h4>Store Owner</h4>
-                <p>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                </p>
-              </div>
-    
-              <div class="testimonial-item">
-                <img src="<?php echo base_url('assets/') ?>img/testimonial-4.jpg" class="testimonial-img" alt="">
-                <h3>Matt Brandon</h3>
-                <h4>Freelancer</h4>
-                <p>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                </p>
-              </div>
-    
-              <div class="testimonial-item">
-                <img src="<?php echo base_url('assets/') ?>img/testimonial-5.jpg" class="testimonial-img" alt="">
-                <h3>John Larson</h3>
-                <h4>Entrepreneur</h4>
-                <p>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                </p>
-              </div>
-
+              <?php endforeach; ?>
             </div>
 
           </div>
@@ -705,54 +557,13 @@ $this->load->view('_partials/navbar');
       <div class="container">
 
         <div class="row no-gutters clients-wrap clearfix wow fadeInUp">
-
+        <?php foreach ($banner as $ban): ?>
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/smktempel.jpg" class="img-fluid" alt="">
+            <a href="<?php echo $ban->url ?>"><img src="<?php echo base_url('files/banner/'.$ban->file_name) ?>" class="img-fluid" alt=""></a>
             </div>
           </div>
-          
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/smkhebat.jpg" class="img-fluid" alt="">
-            </div>
-          </div>
-        
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/kmendik.png" class="img-fluid" alt="">
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/disdik.png" class="img-fluid" alt="">
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/dikpora.png" class="img-fluid" alt="">
-            </div>
-          </div>
-        
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/client-6.png" class="img-fluid" alt="">
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/client-7.png" class="img-fluid" alt="">
-            </div>
-          </div>
-          
-          <div class="col-lg-3 col-md-4 col-xs-6">
-            <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/client-8.png" class="img-fluid" alt="">
-            </div>
-          </div>
+        <?php endforeach; ?>
 
         </div>
 
