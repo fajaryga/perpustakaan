@@ -3,7 +3,6 @@
 $this->load->view('_partials/header');
 $this->load->view('_partials/navbar');
 ?>
-
   <!--==========================
     Intro Section
   ============================-->
@@ -33,15 +32,13 @@ $this->load->view('_partials/navbar');
 
         <header class="section-header">
           <div class="garis2"></div>
-          <h3 style="font-size: 50px;color:#0029FF;text-align: left;font-weight: bold;position: relative; "> PROFIL</h3>
+          <h3 style="font-size: 50px;color:black;text-align: left;font-weight: bold;position: relative; "> PROFIL</h3>
         </header>
 
         <div class="row profil-container">
 
-          <div class="col-lg-6 content order-lg-3 order-2">
-            <p>
-              Perpustakan SMK Negeri 1 Tempel mulai dirintis pada tahun 1968 pada saat Kepala Sekolahnya R. Soewardi B.A yang menempati ruang seadanya untuk melayani kebutuhan sumber bacaan siswa. Seiring perkembangan sekolah yang semakin maju, maka kebutuhan ruangan perpustakaan tidak bisa dipandang sebelah mata. Sehingga sejak 1988, perpustakaan sudah memiliki ruangan yang lebih representatif dan lokasinya strategi seperti lokasi saat ini yang diberi nama CINTA ILMU. 
-              Gedung perpustakaan sudah mengalami beberapa kali renovasi untuk menambah kenyamanan bagi pengunjung. Dengan bertambahnya jumlah siswa SMK Negeri 1 Tempel, maka pada tahun 2019 direnovasi kembali sesuai standar akreditasi perpusnas.
+          <div class="col-lg-6 content order-lg-3 order-2 " >
+            <p>     Perpustakan SMK Negeri 1 Tempel mulai dirintis pada tahun 1968 pada saat Kepala Sekolahnya R. Soewardi B.A yang menempati ruang seadanya untuk melayani kebutuhan sumber bacaan siswa.Seiring perkembangan sekolah yang semakin maju, maka kebutuhan ruangan perpustakaan tidak bisa dipandang sebelah mata. </p><p> Sehingga sejak 1988, perpustakaan sudah memiliki ruangan yang lebih representatif dan lokasinya strategi seperti lokasi saat ini yang diberi nama CINTA ILMU.      Gedung perpustakaan sudah mengalami beberapa kali renovasi untuk menambah kenyamanan bagi pengunjung. Dengan bertambahnya jumlah siswa SMK Negeri 1 Tempel, maka pada tahun 2019 direnovasi kembali sesuai standar akreditasi perpusnas.
             </p>
             <a href="" class="makeap_but" style="float: right; margin-bottom: 20px;">Selengkapnya</a>
           </div>
@@ -79,14 +76,14 @@ $this->load->view('_partials/navbar');
     </section><!-- #profil -->
 
     <!--==========================
-      ebook Section
+      Services Section
     ============================-->
      <section id="services" class="section-bg">
       
       <div class="container">
         <header class="section-header">
           <div class="garis"></div>
-          <h3 style="font-size: 50px;color: #0029FF;text-align: right;font-weight: bold;position:relative;top: -30px; right: -33px;"> KOLEKSI BUKU TERBARU </h3>
+          <h3 style="font-size: 50px;color: black;text-align: right;font-weight: bold;position:relative;top: -30px; right: -33px;"> KOLEKSI BUKU TERBARU </h3>
         </header>
       </div>
 
@@ -253,11 +250,11 @@ $this->load->view('_partials/navbar');
               
       </div>
                 <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true" style="width: 50px; height: 50px; margin-right: 50px; color: #000000;"></span>
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="width: 50px; height: 50px; margin-right: 50px; color: #757575;"></span>
                 <span class="sr-only">Previous</span>
              </a>
                 <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true" style="width: 50px; height: 50px; margin-left: 50px; color: #000000;"></span>
+                <span class="carousel-control-next-icon" aria-hidden="true" style="width: 50px; height: 50px; margin-left: 50px; color: #757575; background-color: black;"></span>
                 <span class="sr-only">Next</span>
               </a>
               
@@ -268,10 +265,10 @@ $this->load->view('_partials/navbar');
       
 
       
-    </section><!-- #ebook -->
+    </section><!-- #services -->
 
     <!--==========================
-      Statistik section
+      Why Us Section
     ============================-->
     <section id="why-us" class="wow fadeIn">
       <div class="container">
@@ -303,7 +300,7 @@ $this->load->view('_partials/navbar');
     </section>
 
     <!--==========================
-      statistik Section
+      Clients Section
     ============================-->
     
     
@@ -315,11 +312,18 @@ $this->load->view('_partials/navbar');
       <div class="container">
         <header class="section-header">
           <div class="garis"></div>
-          <h3 style="font-size: 50px;color:#0029FF;text-align: right;font-weight: bold;position: relative;top: -30px;right: -91px;"> BERITA TERBARU </h3>
+          <h3 style="font-size: 50px;color:black;text-align: right;font-weight: bold;position: relative;top: -30px;right: -91px;"> BERITA TERBARU </h3>
         </header>
-     <div class="col-md-12">
+      <!-- percobaan data target -->
+
+<div class="row">
+  <div class="col-12">
+    <div class="tab-content" id="nav-tabContent">
+      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+        <!-- pertama -->
+        <div class="col-md-12 ">
         <div class="row">
-          <div class="card mb-3">
+          <div class="card mb-3 thumb">
             <div class="row no-gutters">
               <div class="col-md-4">
                 <img src="<?php echo base_url('assets/') ?>img/contoh.png" class="card-img" alt="...">
@@ -334,18 +338,90 @@ $this->load->view('_partials/navbar');
             </div>
           </div>
          </div>
-
         </div> 
+        <!-- /pertama -->
+      </div>
+      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+        <!-- kedua -->
+        <div class="col-md-12 ">
         <div class="row">
-         <div class="col-md-12">
-           <div class="alert alert-info text-dark" role="alert">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi...<a href="">(Baca Sekarang)</a>
-           </div>
-           <div class="alert alert-info text-dark" role="alert">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi...<a href="">(Baca Sekarang)</a>
-           </div>
-           <div class="alert alert-info text-dark" role="alert">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi...<a href="">(Baca Sekarang)</a>
-           </div>
-         </div> 
-        </div>
+          <div class="card mb-3 thumb">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="<?php echo base_url('assets/') ?>img/bg1.jpg" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8 bg-primary text-light">
+                <div class="card-body">
+                  <h2 class="card-title">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</h2>
+                  <p class="card-text"><small><i>13 Juli 2018 / 17:00:00</i></small></p>
+                  <p class="card-text">SMKN 1 TEMPEL Mendpat Predikat Juara III Lomba ..<a href="" class="text-light">(Baca Sekarang)</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+        </div> 
+        <!-- /kedua -->
+      </div>
+      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+        <!-- ketiga -->
+        <div class="col-md-12 ">
+        <div class="row">
+          <div class="card mb-3 thumb">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="<?php echo base_url('assets/') ?>img/contoh.png" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8 bg-primary text-light">
+                <div class="card-body">
+                  <h2 class="card-title">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</h2>
+                  <p class="card-text"><small><i>13 Juli 2018 / 17:00:00</i></small></p>
+                  <p class="card-text">SMKN 1 TEMPEL Mendpat Predikat Juara III Lomba ..<a href="" class="text-light">(Baca Sekarang)</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+        </div> 
+        <!-- /ketiga -->
+      </div>
+      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+        <!-- ke empat -->
+        <div class="col-md-12 ">
+        <div class="row">
+          <div class="card mb-3 thumb">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="<?php echo base_url('assets/') ?>img/bg1.jpg" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8 bg-primary text-light">
+                <div class="card-body">
+                  <h2 class="card-title">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</h2>
+                  <p class="card-text"><small><i>13 Juli 2018 / 17:00:00</i></small></p>
+                  <p class="card-text">SMKN 1 TEMPEL Mendpat Predikat Juara III Lomba ..<a href="" class="text-light">(Baca Sekarang)</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+         </div>
+        </div> 
+        <!-- /ke empat -->
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</a>
+      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</a>
+      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</a>
+      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</a>
+    </div>
+  </div>
+  
+</div>
+        <!-- /percobaan data target -->
+
+          
          <div class="row float-right">
          <div class="col-md-12">
                     <a href="" class="makeap_but" style="float: right;">Berita Lainnya</a>
@@ -364,7 +440,7 @@ $this->load->view('_partials/navbar');
 
         <header class="section-header">
           <div class="garis2"></div>
-          <h3 style="font-size: 50px;color:#0029FF;text-align: left;font-weight: bold;position: relative; top: 0px;"> EVENT TERBARU </h3>
+          <h3 style=""> EVENT TERBARU </h3>
         </header>
 
       
@@ -380,14 +456,14 @@ $this->load->view('_partials/navbar');
               <div class="post-title">
                 <h3>
                   <a href="#">
-                    aisjdlajsldasllansdl
+                   Workshop e-Content dan Reference Management Tool
                   </a>
                 </h3>
-                <span class="post-date">Sep 19,2019</span>
+                <br>
               </div>
               <div class="entry-content">
                 <p>
-                  "     SMKN 1 TEMPEL berhasil membawa pulang piala penghargaan sebagai perpustakaan terlengkap sekabupaten"
+                  "     SMKN 1 TEMPEL mengadakan Workshop e-Content dan Reference Management    "
                 </p>
               </div>
             </div>
@@ -406,10 +482,10 @@ $this->load->view('_partials/navbar');
               <div class="post-title">
                 <h3>
                   <a href="#">
-                    aisjdlajsldasllansdl
+                    Talkshow Memulai Bisnis dari Mahasiswa
                   </a>
                 </h3>
-                <span class="post-date">Sep 19,2019</span>
+    			<br>
               </div>
               <div class="entry-content">
                 <p>
@@ -435,7 +511,7 @@ $this->load->view('_partials/navbar');
                     Tata Kelola Keuangan
                   </a>
                 </h3>
-                <span class="post-date">Sep 19,2019</span>
+                <br>
               </div>
               <div class="entry-content">
                 <p>
@@ -457,7 +533,7 @@ $this->load->view('_partials/navbar');
       <div class="container">
         <header class="section-header">
             <div class="garis" style="top: 20px"></div>
-            <h3 style="font-size: 50px;color:#0029FF;text-align:right;font-weight: bold;position: relative; padding: 10px;top:6px;right: -91px;"> GALERI </h3>
+            <h3 style="font-size: 50px;color:black;text-align:right;font-weight: bold;position: relative; padding: 10px;top:6px;right: -91px;"> GALERI </h3>
           </header>
       
       <div class="row">
@@ -561,9 +637,9 @@ $this->load->view('_partials/navbar');
    <section id="testimonials" class="section-bg">
       <div class="container">
         <header class="section-header">
-          <h3>Testimonials</h3>
+          <div class="garis2"></div>
+          <h3 style="font-size: 50px;color:black;text-align: left;font-weight: bold;position: relative; "> TESTIMONI </h3>
         </header>
-
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="owl-carousel testimonials-carousel wow fadeInUp">
@@ -632,49 +708,49 @@ $this->load->view('_partials/navbar');
 
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/banner1.png" class="img-fluid" alt="">
+              <img src="<?php echo base_url('assets/') ?>img/clients/smktempel.jpg" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/banner2.png" class="img-fluid" alt="">
+              <img src="<?php echo base_url('assets/') ?>img/clients/smkhebat.jpg" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/banner3.png" class="img-fluid" alt="">
+              <img src="<?php echo base_url('assets/') ?>img/clients/kmendik.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/banner4.png" class="img-fluid" alt="">
+              <img src="<?php echo base_url('assets/') ?>img/clients/disdik.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/banner5.png" class="img-fluid" alt="">
+              <img src="<?php echo base_url('assets/') ?>img/clients/dikpora.png" class="img-fluid" alt="">
             </div>
           </div>
         
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/banner6.png" class="img-fluid" alt="">
+              <img src="<?php echo base_url('assets/') ?>img/clients/client-6.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/banner7.png" class="img-fluid" alt="">
+              <img src="<?php echo base_url('assets/') ?>img/clients/client-7.png" class="img-fluid" alt="">
             </div>
           </div>
           
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-              <img src="<?php echo base_url('assets/') ?>img/clients/banner8.png" class="img-fluid" alt="">
+              <img src="<?php echo base_url('assets/') ?>img/clients/client-8.png" class="img-fluid" alt="">
             </div>
           </div>
 

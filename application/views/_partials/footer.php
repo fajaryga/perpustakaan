@@ -11,12 +11,22 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Address</h4>
+            <h4>Alamat</h4>
               <a>Jalan Magelang Km 17</a>
               <br><a>Kec. Tempel</a>
               <br><a>Kab. Sleman</a>
               <br><a>Daerah Istimewa Yogyakarta</a>
               <br><a>55552</a>
+              <div class="social-links">
+                <br>
+                <br>
+
+              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-info">
@@ -31,8 +41,10 @@
         SMK Negeri 1 Tempel - Akreditasi A , Sleman, Yogyakarta
         <br>Kreasi Kode &copy; 2019-2024
       </div>
+
     </div>
   </footer><!-- #footer -->
+
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
   <!-- Uncomment below i you want to use a preloader -->
   <!-- <div id="preloader"></div> -->
