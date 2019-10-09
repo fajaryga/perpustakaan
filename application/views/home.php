@@ -15,52 +15,59 @@ $this->load->view('_partials/navbar');
     <div class="video-background-content container h-100">
       <div class="d-flex h-100 text-center align-items-center">
         <div class="int-info">
-                <h2>Perpustakaan SMKN 1 TEMPEL</h2>
+                  <h2>Perpustakaan</h2> <br> <h4> SMKN 1 TEMPEL</h4>
         </div>
         </div>
       </div>
     </div>
     </div>
     </section>
-  <main id="main">
 
     <!--==========================
       profil Us Section
     ============================-->
-    <section id="profil">
+    <section id="profil" class="wow fadeIn">
       <div class="container">
-
         <header class="section-header">
           <div class="garis2"></div>
-          <h3 style="font-size: 50px;color:black;text-align: left;font-weight: bold;position: relative; "> PROFIL</h3>
+          <h3>PROFIL</h3>
         </header>
 
         <div class="row profil-container">
 
           <div class="col-lg-6 content order-lg-3 order-2 " >
-            <p>     Perpustakan SMK Negeri 1 Tempel mulai dirintis pada tahun 1968 pada saat Kepala Sekolahnya R. Soewardi B.A yang menempati ruang seadanya untuk melayani kebutuhan sumber bacaan siswa.Seiring perkembangan sekolah yang semakin maju, maka kebutuhan ruangan perpustakaan tidak bisa dipandang sebelah mata. </p><p> Sehingga sejak 1988, perpustakaan sudah memiliki ruangan yang lebih representatif dan lokasinya strategi seperti lokasi saat ini yang diberi nama CINTA ILMU.      Gedung perpustakaan sudah mengalami beberapa kali renovasi untuk menambah kenyamanan bagi pengunjung. Dengan bertambahnya jumlah siswa SMK Negeri 1 Tempel, maka pada tahun 2019 direnovasi kembali sesuai standar akreditasi perpusnas.
-            </p>
-            <a href="" class="makeap_but" style="float: right; margin-bottom: 20px;">Selengkapnya</a>
+            <?php
+                foreach ($profil as $key => $value) {
+                    
+                    echo 
+                    '<p>' . 
+                    $value->content . '</p>
+                
+            <a href="' . base_url($value->permalink). '" class="makeap_but" style="float: right; margin-bottom: 20px;">Selengkapnya</a>';
+          }
+                ?>
           </div>
 
                       <div class="col-lg-6 content order-lg-1 order-2">
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
               <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <?php
+                foreach ($slider as $key => $value) {
+                    $active = ($key == 0) ? 'active' : '';
+                    echo '<li data-target="#carouselExampleIndicators" data-slide-to="' . $key . '" class="' . $active . '"></li>';
+                }
+                ?>
               </ol>
               <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img class="d-block w-100" src="<?php echo base_url('assets/') ?>img/contoh.png" alt="First slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="<?php echo base_url('assets/') ?>img/bg1.jpg" alt="Second slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="<?php echo base_url('assets/') ?>img/course01.jpg" alt="Third slide">
-                </div>
-              </div>
+                <?php
+                foreach ($slider as $key => $value) {
+                    $active = ($key == 0) ? 'active' : '';
+                    echo '<div class="carousel-item ' . $active . '">
+                    <img class="d-block w-100" src="' . base_url('files/'.$value->file_name) . '">
+
+                           </div>';
+                }
+                ?>
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
@@ -78,12 +85,12 @@ $this->load->view('_partials/navbar');
     <!--==========================
       Services Section
     ============================-->
-     <section id="services" class="section-bg">
+     <section id="koleksi" class="section-bg">
       
       <div class="container">
         <header class="section-header">
           <div class="garis"></div>
-          <h3 style="font-size: 50px;color: black;text-align: right;font-weight: bold;position:relative;top: -30px; right: -33px;"> KOLEKSI BUKU TERBARU </h3>
+          <h3> KOLEKSI BUKU TERBARU </h3>
         </header>
       </div>
 
@@ -107,10 +114,11 @@ $this->load->view('_partials/navbar');
                         <div class="overlay">
                           <i class="ti-plus"></i>
                         </div>
-                        <img src="<?php echo base_url('assets/') ?>img/cover.png" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
+                        <img src="<?php echo base_url('assets/') ?>img/buku/cover.png" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
                       </figure>
                       <div class="gtco-text">
-                        <h2>Filsafat</h2>
+                        <h2>Antologi Rasa</h2>
+                        <p>Ika Natassa</p>
                       </div>
                     </a>
                   </div>
@@ -119,10 +127,11 @@ $this->load->view('_partials/navbar');
                     <a href="#" target="_blank" class="gtco-card-item">
                       <figure>
                         
-                        <img src="<?php echo base_url('assets/') ?>img/cover.png" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
+                        <img src="<?php echo base_url('assets/') ?>img/buku/2.jpg" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
                       </figure>
                       <div class="gtco-text">
-                        <h2>Filsafat2</h2>
+                        <h2>Aku Tanpamu</h2>
+                        <p>RuDee</p>
                       </div>
                       </a>
                   </div>
@@ -135,10 +144,11 @@ $this->load->view('_partials/navbar');
                         <div class="overlay">
                           <i class="ti-plus"></i>  
                         </div>
-                        <img src="<?php echo base_url('assets/') ?>img/cover.png" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
+                        <img src="<?php echo base_url('assets/') ?>img/buku/3.jpg" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
                       </figure>
                       <div class="gtco-text">
-                        <h2>Filsafat</h2>
+                         <h2>Sisa Umur</h2>
+                        <p>Mukhlis A Hamid</p>
                       </div>
                        </a>
                      </div>
@@ -156,10 +166,11 @@ $this->load->view('_partials/navbar');
                         <div class="overlay">
                           <i class="ti-plus"></i>
                         </div>
-                        <img src="<?php echo base_url('assets/') ?>img/cover.png" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
+                        <img src="<?php echo base_url('assets/') ?>img/buku/4.jpg" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
                       </figure>
                       <div class="gtco-text">
-                        <h2>Filsafat</h2>
+                         <h2>Raja Rao</h2>
+                        <p>Kantapura</p>
                       </div>
                     </a>
                   </div>
@@ -168,10 +179,11 @@ $this->load->view('_partials/navbar');
                     <a href="#" target="_blank" class="gtco-card-item">
                       <figure>
                         
-                        <img src="<?php echo base_url('assets/') ?>img/cover.png" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
+                        <img src="<?php echo base_url('assets/') ?>img/buku/5.jpg" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
                       </figure>
                       <div class="gtco-text">
-                        <h2>Buku 2</h2>
+                         <h2>Geliat Dalam Keterbatasan</h2>
+                        <p>Ika Natassa</p>
                       </div>
                       </a>
                   </div>
@@ -184,10 +196,11 @@ $this->load->view('_partials/navbar');
                         <div class="overlay">
                           <i class="ti-plus"></i>  
                         </div>
-                        <img src="<?php echo base_url('assets/') ?>img/cover.png" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
+                        <img src="<?php echo base_url('assets/') ?>img/buku/3.jpg" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
                       </figure>
                       <div class="gtco-text">
-                        <h2>Filsafat</h2>
+                        <h2>Sisa Umur</h2>
+                        <p>Mukhlis A Hamid</p>
                       </div>
                        </a>
                      </div>
@@ -205,10 +218,11 @@ $this->load->view('_partials/navbar');
                         <div class="overlay">
                           <i class="ti-plus"></i>
                         </div>
-                        <img src="<?php echo base_url('assets/') ?>img/cover.png" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
+                        <img src="<?php echo base_url('assets/') ?>img/buku/4.jpg" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
                       </figure>
                       <div class="gtco-text">
-                        <h2>Filsafat</h2>
+                        <h2>Raja Rao</h2>
+                        <p>Kantapura</p>
                       </div>
                     </a>
                   </div>
@@ -217,10 +231,11 @@ $this->load->view('_partials/navbar');
                     <a href="#" target="_blank" class="gtco-card-item">
                       <figure>
                         
-                        <img src="<?php echo base_url('assets/') ?>img/cover.png" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
+                        <img src="<?php echo base_url('assets/') ?>img/buku/2.jpg" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
                       </figure>
                       <div class="gtco-text">
-                        <h2>Filsafat2</h2>
+                         <h2>Aku Tanpamu</h2>
+                        <p>RuDee</p>
                       </div>
                       </a>
                   </div>
@@ -233,10 +248,11 @@ $this->load->view('_partials/navbar');
                         <div class="overlay">
                           <i class="ti-plus"></i>  
                         </div>
-                        <img src="<?php echo base_url('assets/') ?>img/cover.png" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
+                        <img src="<?php echo base_url('assets/') ?>img/buku/cover.png" width="100%" height="100%" style="padding: 15px 15px" alt="image" class="img-responsive">
                       </figure>
                       <div class="gtco-text">
-                        <h2>Filsafat</h2>
+                         <h2>Antologi Rasa</h2>
+                        <p>Ika Natassa</p>
                       </div>
                        </a>
                      </div>
@@ -254,7 +270,7 @@ $this->load->view('_partials/navbar');
                 <span class="sr-only">Previous</span>
              </a>
                 <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true" style="width: 50px; height: 50px; margin-left: 50px; color: #757575; background-color: black;"></span>
+                <span class="carousel-control-next-icon" aria-hidden="true" style="width: 50px; height: 50px; margin-left: 50px; color: #757575;"></span>
                 <span class="sr-only">Next</span>
               </a>
               
@@ -270,30 +286,35 @@ $this->load->view('_partials/navbar');
     <!--==========================
       Why Us Section
     ============================-->
-    <section id="why-us" class="wow fadeIn">
+    <section id="statistik" class="wow fadeIn">
       <div class="container">
         <header class="section-header">
           <div class="garis3"></div>
-          <h3 style="font-size: 50px;color:white;text-align: left;font-weight: bold;position: relative; ">DATA STATISTIK</h3>
+          <h3>DATA STATISTIK</h3>
         </header>
         <?php foreach ($stats as $stat): ?>
         <div class="row counters">
-        	
-          <div class="col-lg-4 col-6 text-center">
+
+          <div class="col-lg-3 col-6 text-center">
             <span data-toggle="counter-up"><?php echo $stat->member ?></span>
             <p>Anggota</p>
           </div>
 
-          <div class="col-lg-4 col-6 text-center">
+          <div class="col-lg-3 col-6 text-center">
             <span data-toggle="counter-up"><?php echo $stat->visitor ?></span>
             <p>Pengunjung</p>
           </div>
 
-          <div class="col-lg-4 col-6 text-center">
+           <div class="col-lg-3 col-6 text-center">
+            <span data-toggle="counter-up"><?php echo $stat->borrower ?></span>
+            <p>Peminjam</p>
+          </div>
+
+          <div class="col-lg-3 col-6 text-center">
             <span data-toggle="counter-up"><?php echo $stat->collection ?></span>
             <p>Buku</p>
           </div>
-          
+
         </div>
         <?php endforeach; ?>
       </div>
@@ -312,120 +333,76 @@ $this->load->view('_partials/navbar');
       <div class="container">
         <header class="section-header">
           <div class="garis"></div>
-          <h3 style="font-size: 50px;color:black;text-align: right;font-weight: bold;position: relative;top: -30px;right: -91px;"> BERITA TERBARU </h3>
+          <h3> BERITA TERBARU </h3>
         </header>
       <!-- percobaan data target -->
 
-<div class="row">
-  <div class="col-12">
-    <div class="tab-content" id="nav-tabContent">
-      <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
-        <!-- pertama -->
-        <div class="col-md-12 ">
-        <div class="row">
-          <div class="card mb-3 thumb">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="<?php echo base_url('assets/') ?>img/contoh.png" class="card-img" alt="...">
-              </div>
-              <div class="col-md-8 bg-primary text-light">
-                <div class="card-body">
-                  <h2 class="card-title">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</h2>
-                  <p class="card-text"><small><i>13 Juli 2018 / 17:00:00</i></small></p>
-                  <p class="card-text">SMKN 1 TEMPEL Mendpat Predikat Juara III Lomba ..<a href="" class="text-light">(Baca Sekarang)</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-         </div>
-        </div> 
-        <!-- /pertama -->
-      </div>
-      <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-        <!-- kedua -->
-        <div class="col-md-12 ">
-        <div class="row">
-          <div class="card mb-3 thumb">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="<?php echo base_url('assets/') ?>img/bg1.jpg" class="card-img" alt="...">
-              </div>
-              <div class="col-md-8 bg-primary text-light">
-                <div class="card-body">
-                  <h2 class="card-title">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</h2>
-                  <p class="card-text"><small><i>13 Juli 2018 / 17:00:00</i></small></p>
-                  <p class="card-text">SMKN 1 TEMPEL Mendpat Predikat Juara III Lomba ..<a href="" class="text-light">(Baca Sekarang)</a></p>
-                </div>
+          <div class="row">
+            <div class="col-8">
+              <div class="tab-content" id="nav-tabContent">
+              	<?php
+                foreach ($news as $key => $value) {
+                    $active = ($key == 0) ? 'active' : '';
+                    $show = ($key == 0) ? 'show' : '';
+                    $home = ($key == 0) ? 'home' : '';
+                    $profile = ($key == 1) ? 'profile' : '';
+                    $messages = ($key == 2) ? 'messages' : '';
+                    $settings = ($key == 3) ? 'settings' : '';
+                    echo
+                '<div class="tab-pane fade ' . $show . ' ' . $active . '" id="list-'. $home . $profile . $messages . $settings .'" role="tabpanel" aria-labelledby="list-'. $home . $profile . $messages . $settings .'-list">
+                  
+                  <div class="col-md-12 ">
+                  <div class="row">
+                    <div class="card mb-3 thumb">
+                    
+                      <div class="row no-gutters">
+                        <div class="col-md-4">
+                          <img src="'. base_url("files/" . $value->file_name) . '" class="card-img" alt="...">
+                        </div>
+                        <div class="col-md-8 bg-primary text-light">
+                          <div class="card-body">
+                            <h2 class="card-title">' . $value->judul . '</h2>
+                            <p class="card-text"><small><i>' .  $value->tanggal . ' / ' . $value->jam . '</i></small></p>
+                            <p class="card-text">' .  $value->content . '..' . '<a href="' . $value->permalink . '" class="text-light"> (Selanjutnya)</a></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                   </div>
+                  </div> 
+                </div>';
+                }
+                ?>
               </div>
             </div>
-          </div>
-         </div>
-        </div> 
-        <!-- /kedua -->
-      </div>
-      <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
-        <!-- ketiga -->
-        <div class="col-md-12 ">
-        <div class="row">
-          <div class="card mb-3 thumb">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="<?php echo base_url('assets/') ?>img/contoh.png" class="card-img" alt="...">
-              </div>
-              <div class="col-md-8 bg-primary text-light">
-                <div class="card-body">
-                  <h2 class="card-title">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</h2>
-                  <p class="card-text"><small><i>13 Juli 2018 / 17:00:00</i></small></p>
-                  <p class="card-text">SMKN 1 TEMPEL Mendpat Predikat Juara III Lomba ..<a href="" class="text-light">(Baca Sekarang)</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-         </div>
-        </div> 
-        <!-- /ketiga -->
-      </div>
-      <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-        <!-- ke empat -->
-        <div class="col-md-12 ">
-        <div class="row">
-          <div class="card mb-3 thumb">
-            <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="<?php echo base_url('assets/') ?>img/bg1.jpg" class="card-img" alt="...">
-              </div>
-              <div class="col-md-8 bg-primary text-light">
-                <div class="card-body">
-                  <h2 class="card-title">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</h2>
-                  <p class="card-text"><small><i>13 Juli 2018 / 17:00:00</i></small></p>
-                  <p class="card-text">SMKN 1 TEMPEL Mendpat Predikat Juara III Lomba ..<a href="" class="text-light">(Baca Sekarang)</a></p>
-                </div>
-              </div>
-            </div>
-          </div>
-         </div>
-        </div> 
-        <!-- /ke empat -->
-      </div>
-    </div>
-  </div>
-  <div class="col-12">
-    <div class="list-group" id="list-tab" role="tablist">
-      <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list" href="#list-home" role="tab" aria-controls="home">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</a>
-      <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-profile" role="tab" aria-controls="profile">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</a>
-      <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#list-messages" role="tab" aria-controls="messages">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</a>
-      <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#list-settings" role="tab" aria-controls="settings">Lomba Kepala Perpustkaan Berprestasi SMK / SMA Tingkat Provinsi</a>
-    </div>
-  </div>
-  
-</div>
-        <!-- /percobaan data target -->
 
-          
-         <div class="row float-right">
-         <div class="col-md-12">
-                    <a href="" class="makeap_but" style="float: right;">Berita Lainnya</a>
+            <div class="col-4">
+              <div class="list-group" id="list-tab" role="tablist">
+              <?php
+                foreach ($news as $key => $value) {
+                    $active = ($key == 0) ? 'active' : '';
+                    $home = ($key == 0) ? 'home' : '';
+                    $profile = ($key == 1) ? 'profile' : '';
+                    $messages = ($key == 2) ? 'messages' : '';
+                    $settings = ($key == 3) ? 'settings' : '';
+                    echo
+                '<a class="list-group-item list-group-item-action ' . $active . '" id="list-'. $home . $profile . $messages . $settings . '-list" data-toggle="list" href="#list-'. $home. $profile . $messages . $settings . '" role="tab" aria-controls="'. $home . $profile . $messages . $settings . '">' . $value->judul . '</a>';
+             }
+                ?>
+              </div>
+            </div>
+        
+            
+            <div class="col-md-12">
+                    <a href="" class="makeap_but" style="float: right; margin-top: 20px;">Berita Lainnya</a>
          </div> 
+          </div>
+
+         </div>
+         </div>
+
+         <div class="row float-right">
+         
          </div>       
       </div>
     </section>
@@ -440,7 +417,7 @@ $this->load->view('_partials/navbar');
 
         <header class="section-header">
           <div class="garis2"></div>
-          <h3 style=""> EVENT TERBARU </h3>
+          <h3> EVENT TERBARU </h3>
         </header>
 
         <?php foreach ($event as $events): ?>
@@ -448,7 +425,7 @@ $this->load->view('_partials/navbar');
          <article class="post">
           <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-3 event-date" style="border-right:1px solid #E6E6E6; text-align: center;">
-              <span style="display: block;width: 100%;line-height: 1;font-size: 100px;color: #a6a6a6;font-family:Circular Std;">
+              <span style="display: block;width: 100%;line-height: 1;font-size: 100px;color: #a6a6a6;font-family:sans-serif;">
                 <?php echo $events->tanggal ?>
               </span>
                <strong ><?php echo $events->blnthn ?></strong>
@@ -464,15 +441,16 @@ $this->load->view('_partials/navbar');
               </div>
               <div class="entry-content">
                 <p>
-                  <?php echo $events->content ?>
+                 <?php echo $events->content ?>
                 </p>
               </div>
             </div>
           </div>
-        </article>
-        <?php endforeach; ?>
-       
-         <a href="" class="makeap_but" style="float: right;">Event Lainnya</a>
+           
+         </article>
+          <?php endforeach; ?>
+         
+         <a href="event.html" class="makeap_but" style="float: right;">Event Lainnya</a>
       </div>
     </section><!-- #berita -->
 
@@ -483,8 +461,8 @@ $this->load->view('_partials/navbar');
     <section id="galeri" class="section-bg">
       <div class="container">
         <header class="section-header">
-            <div class="garis" style="top: 20px"></div>
-            <h3 style="font-size: 50px;color:black;text-align:right;font-weight: bold;position: relative; padding: 10px;top:6px;right: -91px;"> GALERI </h3>
+            <div class="garis"></div>
+            <h3> GALERI </h3>
           </header>
       
       <div class="row">
@@ -506,10 +484,10 @@ $this->load->view('_partials/navbar');
               </div>
             </div>
           </div> 
-      <?php endforeach; ?>
-          
+        <?php endforeach; ?>
+
            <div class="container">
-       <a href="" class="makeap_but" style="float: right; margin-bottom: 20px;">Foto Lainnya</a>
+       <a href="galeri.html" class="makeap_but" style="float: right; margin-bottom: 20px;">Foto Lainnya</a>
        </div>
         </div>
       </div>
@@ -522,11 +500,11 @@ $this->load->view('_partials/navbar');
     <!--==========================
       Testimoni Section
     ============================-->
-   <section id="testimonials" class="section-bg">
+   <section id="testimoni" class="section-bg">
       <div class="container">
         <header class="section-header">
           <div class="garis2"></div>
-          <h3 style="font-size: 50px;color:black;text-align: left;font-weight: bold;position: relative; "> TESTIMONI </h3>
+          <h3> TESTIMONI </h3>
         </header>
         <div class="row justify-content-center">
           <div class="col-lg-8">
@@ -541,6 +519,7 @@ $this->load->view('_partials/navbar');
                 </p>
               </div>
               <?php endforeach; ?>
+    
             </div>
 
           </div>
@@ -560,10 +539,11 @@ $this->load->view('_partials/navbar');
         <?php foreach ($banner as $ban): ?>
           <div class="col-lg-3 col-md-4 col-xs-6">
             <div class="client-logo">
-            <a href="<?php echo $ban->url ?>"><img src="<?php echo base_url('files/banner/'.$ban->file_name) ?>" class="img-fluid" alt=""></a>
+              <img src="<?php echo base_url('files/banner/'.$ban->file_name) ?>" class="img-fluid" alt="">
             </div>
           </div>
-        <?php endforeach; ?>
+         <?php endforeach; ?>
+          
 
         </div>
 
@@ -572,6 +552,7 @@ $this->load->view('_partials/navbar');
     </section><!-- #contact -->
 
   </main>
+
 <?php
 $this->load->view('_partials/footer');
 $this->load->view('_partials/js');

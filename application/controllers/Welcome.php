@@ -16,6 +16,9 @@ class Welcome extends CI_Controller {
 		$data["banner"] = $this->home_model->banner();
 		$data["gallery"] = $this->home_model->gallery();
 		$data["event"] = $this->home_model->event();
+		$data["slider"] = $this->home_model->slider();
+		$data["profil"] = $this->home_model->profil();
+		$data["news"] = $this->home_model->berita();
 		$this->load->view('home', $data);
 	}
 }
